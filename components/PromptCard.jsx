@@ -60,6 +60,7 @@ const PromptCard = ({
             }
             width={12}
             height={12}
+            alt="icon"
           />
         </div>
       </div>
