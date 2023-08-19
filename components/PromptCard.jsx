@@ -22,7 +22,7 @@ const PromptCard = ({
   };
   const displayProfile = (id, name) => {
     if (id) {
-      if (post.creator._id === session?.user.id) return router.push('/profile');
+      if (id === session?.user.id) return router.push('/profile');
       router.push(`/profile?id=${id}&name=${name}`);
     }
   };
@@ -31,9 +31,9 @@ const PromptCard = ({
       <div className="flex justify-between items-start gap-5">
         <div
           className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
-          onClick={() =>
-            displayProfile(post.creator?._id, post.creator?.username)
-          }
+          onClick={() => {
+            displayProfile(post.creator?._id, post.creator?.username);
+          }}
         >
           <Image
             src={post.creator?.image}

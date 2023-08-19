@@ -11,7 +11,7 @@ const MyProfile = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const [posts, setPosts] = useState([]);
-
+  console.log('name' + session?.user.id);
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch(
